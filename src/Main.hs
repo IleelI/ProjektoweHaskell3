@@ -1,7 +1,5 @@
 module Main where
 
-import Text.ParserCombinators.ReadPrec (reset)
-
 isEmpty :: (Num a) => [a] -> Bool
 isEmpty [] = True
 isEmpty _ = False
@@ -9,9 +7,10 @@ isEmpty _ = False
 filterUserInput :: String -> Integer
 filterUserInput inputString =
   if integerValue > 5
-    then 3
+    then defaultValue
     else integerValue
   where
+    defaultValue = 3
     integerValue = read inputString :: Integer
 
 getDigitsPower :: Integer -> Integer -> [Integer]
